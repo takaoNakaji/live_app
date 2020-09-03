@@ -69,4 +69,9 @@ Thumbs.db
 /node_modules
 /yarn-error.log
 
+# Ignore Byebug command history file.
 .byebug_history
+
+
+# Ignore Spring files.
+/spring/*.pid
