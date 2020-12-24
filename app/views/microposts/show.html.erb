@@ -1,0 +1,38 @@
+<% provide(:title, 'ライブ詳細') %>
+<h1>ライブ詳細</h1>
+<table class="table">
+  <tr>
+    <th>タイトル</th>
+    <td><%= @micropost.title %></td>
+  </tr>
+  <tr>
+    <th>日付</th>
+    <td><%= l(@micropost.live_on, format: :long) %></td>
+  </tr>
+  <tr>
+    <th>時間</th>
+    <td><%= l(@micropost.live_from_at) %>～<%= l(@micropost.live_to_at) %></td>
+  </tr>
+  <tr>
+    <th>エリア</th>
+    <td><%= @micropost.area %></td>
+  </tr>
+  <tr>
+    <th>住所</th>
+    <td><%= @micropost.address %></td>
+  </tr>
+  <tr>
+    <th>アーティスト名</th>
+    <td><%= @micropost.act %></td>
+  </tr>
+  <tr>
+    <th>コメント</th>
+    <td><%= @micropost.content %></td>
+  </tr>
+  <tr>
+    <th>URL</th>
+    <td><%= @micropost.url ? text_url_to_link(@micropost.url).html_safe : "" %></td>
+  </tr>
+</table>
+
+<%= link_to "ライブ一覧に戻る", root_path %>

@@ -1,0 +1,21 @@
+<%= form_with(scope: :search, url: root_path, method: :get, local: true, class: "form1") do |f| %>
+  <p>
+    <%= f.label :act, "アーティスト名", class: "sbox1" %>
+    <%= f.text_field :act, value: @search_params[:act], class: "sbox1" %>
+    <br>
+    <%= f.label :live_on, "公演日", class: "sbox1" %>
+    <%= f.date_field :live_on_from, value: @search_params[:live_on_from], class: "sbox1" %>～
+    <%= f.date_field :live_on_to, value: @search_params[:live_on_to], class: "sbox1" %>
+    <%= f.label :area, "エリア", class: "sbox1" %>
+    <%= f.select :area,
+      ['キタ',
+      'ミナミ',
+      '天王寺',
+      '大阪城公園',
+      'その他'],
+    {include_blank:'全て'},
+    value: @search_params[:area], class: "sbox1" %>
+    <br>
+    <%= submit_tag '検索', class: "sbtn1" %>
+  </p>
+<% end %>

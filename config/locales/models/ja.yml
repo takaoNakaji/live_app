@@ -1,0 +1,32 @@
+ja:
+  activerecord:
+    # 設定したいモデル名を指定
+    models:
+      user: ユーザー
+      micropost: ライブ情報
+    # 属性名を指定
+    attributes:
+      # 設定したいモデル名
+      user:
+        # カラム名と表示したい日本語
+        name: 名前
+        email: メールアドレス
+        created_at: 登録日時
+        updated_at: 更新日時
+        password: パスワード
+        password_confirmation: パスワードの確認
+      micropost:
+        content: コメント
+        created_at: 登録日時
+        updated_at: 更新日時
+        picture: 画像
+        title: タイトル
+        live_on: 公演日
+        live_from_at: 開始時間
+        live_to_at: 終了時間
+        area: エリア
+        address: 住所
+        url: URL
+        act: アーティスト名
+        
+        

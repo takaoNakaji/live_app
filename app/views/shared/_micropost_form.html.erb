@@ -1,9 +1,32 @@
 <%= form_for(@micropost) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
-    <%= f.text_area :content, placeholder: "Compose new micropost..." %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <%= f.label :area %>
+    <%= f.select :area,
+    [["キタ","キタ"],
+    ["ミナミ","ミナミ"],
+    ["天王寺","天王寺"],
+    ["大阪城公園","大阪城公園"],
+    ["その他","その他"]],
+    include_blank: "選択してください" %>
+    <%= f.label :address %>
+    <%= f.text_field :address %>
+    <%= f.label :act %>
+    <%= f.text_field :act %>
+    <%= f.label :content %>
+    <%= f.text_area :content %>
+    <%= f.label :url %>
+    <%= f.text_area :url, placeholder: "https://" %>
+    <%= f.label :live_on %>
+    <%= f.date_select :live_on %>
+    <%= f.label :live_from_at %>
+    <%= f.datetime_select :live_from_at %>
+    <%= f.label :live_to_at %>
+    <%= f.datetime_select :live_to_at %>
   </div>
-  <%= f.submit "Post", class: "btn btn-primary" %>
+  <%= f.submit "登録", class: "btn btn-primary" %>
   <span class="picture">
     <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
   </span>
@@ -13,7 +36,7 @@
   $('#micropost_picture').bind('change', function() {
     var size_in_megabytes = this.files[0].size/1024/1024;
     if (size_in_megabytes > 5) {
-      alert('Maximum file size is 5MB. Please choose a smaller file.');
+      alert('最大ファイルサイズは5MBです。小さいファイルを選択してください');
     }
   });
 </script>

@@ -11,13 +11,25 @@
   </head>
   <body>
     <%= render 'layouts/header' %>
+    <% if !logged_in? %>
+    <div class="jumbotron jumbotron-fluid center">
+      <h1>Stcheckへようこそ</h1>
+      <h2>路上ミュージシャンのライブ情報共有サイト</h2>
+      <!--<h2>
+        This is the home page for the
+        <a href="https://railstutorial.jp/">Ruby on Rails Tutorial</a>
+        sample application.
+      </h2>-->
+      <%= link_to "今すぐ新規登録!", signup_path, class: "btn btn-lg btn-primary" %>
+    </div>
+    <% end %>
     <div class="container">
       <% flash.each do |message_type, message| %>
         <div class="alert alert-<%= message_type %>"><%= message %></div>
       <% end %>
       <%= yield %>
-      <%= render 'layouts/footer' %>
-      <%= debug(params) if Rails.env.development? %>
     </div>
+    <%= render 'layouts/footer' %>
+    <%= debug(params) if Rails.env.development? %>
   </body>
 </html>
