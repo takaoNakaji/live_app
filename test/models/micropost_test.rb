@@ -3,9 +3,9 @@ require 'test_helper'
 class MicropostTest < ActiveSupport::TestCase
   def setup
     @user = users(:michael)
-    @micropost = @user.microposts.build(content: "Lorem ipsum")
+    @micropost = @user.microposts.build(title: "title", content: "Lorem ipsum", area: "area", live_on: Date.today, act: "act")
   end
-
+  
   test "should be valid" do
     assert @micropost.valid?
   end
