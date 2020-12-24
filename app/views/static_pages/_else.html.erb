@@ -2,7 +2,7 @@
 <ol class="microposts">
     <%= render @microposts %>
 </ol>
-<%= will_paginate @microposts %>
+<%= will_paginate @microposts, :previous_label => ' &lt 前へ', :next_label => '次へ &gt' %>
 
 <%#= link_to image_tag("rails.png", alt: "Rails logo"),
         'http://rubyonrails.org/' %>

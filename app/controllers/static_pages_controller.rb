@@ -3,11 +3,11 @@ class StaticPagesController < ApplicationController
     if logged_in?
       @micropost  = current_user.microposts.build
       @search_params = micropost_search_params
-      @microposts = Micropost.where("live_on > ?", Date.yesterday).paginate(page: params[:page]).search(@search_params)
+      @microposts = Micropost.where("live_on > ?", Date.yesterday).paginate(page: params[:page], per_page: 10).search(@search_params)
       #@feed_items = current_user.feed.paginate(page: params[:page])
     else
       @search_params = micropost_search_params
-      @microposts = Micropost.where("live_on > ?", Date.yesterday).paginate(page: params[:page]).search(@search_params)
+      @microposts = Micropost.where("live_on > ?", Date.yesterday).paginate(page: params[:page], per_page: 10).search(@search_params)
     end
   end
 
