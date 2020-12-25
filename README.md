@@ -1,14 +1,35 @@
-# Ruby on Rails チュートリアルのサンプルアプリケーション
+# LiveApp
 
-これは、次の教材で作られたサンプルアプリケーションです。   
-[*Ruby on Rails チュートリアル*](https://railstutorial.jp/)
-[Michael Hartl](http://www.michaelhartl.com/) 著
+これは、Ruby on Railsで作られた、路上ミュージシャンのライブ情報を共有するためのプロジェクトです。
 
-## ライセンス
+このプロジェクトには、以下の機能があります：
 
-[Ruby on Rails チュートリアル](https://railstutorial.jp/)内にある
-ソースコードはMITライセンスとBeerwareライセンスのもとで公開されています。
-詳細は [LICENSE.md](LICENSE.md) をご覧ください。
+* 記事一覧表示機能
+* 記事詳細表示機能
+* 記事検索機能
+* 記事登録機能
+* 記事編集機能
+* 記事削除機能
+* 管理ユーザー登録機能
+* 管理ユーザー編集機能
+* 管理ユーザー削除機能
+* 管理ユーザーログイン機能
+* テストユーザーでのログイン機能
+* gravatorへの画像ファイルのアップロード機能
+* DBテーブルへのリレーション管理(開発環境、テスト環境：sqlite3、本番環境：PostgreSQL)
+* ページネーション機能
+* グローバルメニュー機能
+* ページトップボタン機能
+* 投稿したURLをハイパーリンクにする機能
+* 単体テスト機能
+* 結合テスト機能
+* Paas：heroku <https://stcheck85.herokuapp.com/>
+* セッション管理はクッキー方式
+
+## 序文
+
+このプロジェクトは、Windowsでの使用を目的としています（おそらくMac OS X、Linuxでの利用も可能ですが、未確認です）。
+また、以下の手順はWindows専用です。申し訳ございません。
 
 ## 使い方
 
@@ -37,5 +58,3 @@ $ rails test
 $ rails server
 ```
 
-詳しくは、[*Ruby on Rails チュートリアル*](https://railstutorial.jp/)
-を参考にしてください。
