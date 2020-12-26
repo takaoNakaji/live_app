@@ -98,19 +98,16 @@ p {
 /* フッター */
 
 footer {
-  text-align: center;
   margin-top: 45px;
   padding-top: 5px;
-  border-top: 1px groove #eee;
-  background-color: black;
-  width: 100%;
-  height: 50px;
-}
-
-.copyright {
-  color: white;
-  font-size: 12px;
-  padding-top: 10px;
+  border-top: 1px solid #eaeaea;
+  color: #999;
+  p {
+    color: #555;
+  }
+  small {
+  float: left;
+  }
 }
 
 .pagetop {
@@ -169,6 +166,7 @@ aside {
 }
 
 /* 検索フォーム */
+
 .form1 {
   position:relative;
   margin-bottom:20px;
@@ -178,7 +176,6 @@ aside {
   outline:0;
   height:50px;
   padding:0 10px;
-
   left:0;
   max-width:270px;
   border-radius:2px;
@@ -195,12 +192,11 @@ aside {
   font-weight:bold;
   font-size:16px;
   border:none;
-}
-.sbtn1:hover {
-  backgroud:#eee;
+  &:hover {
+    backgroud:#eee;
   color:#7fbfff;
+  }
 }
-
 
 /* 入力フォーム */
 
