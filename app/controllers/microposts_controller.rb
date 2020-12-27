@@ -11,13 +11,16 @@ class MicropostsController < ApplicationController
   end
 
   def create
-    @micropost = current_user.microposts.build(micropost_params)
-    if @micropost.save
+    begin
+      @micropost = current_user.microposts.build(micropost_params)
+      @micropost.transaction do
+        @micropost.save!
+      end
       flash[:success] = "ライブを作成しました！"
       redirect_to root_url
-    else
+    rescue
       @microposts = []
-      #@feed_items = []
+      @feed_items = []
       render 'new'
     end
   end
@@ -27,19 +30,29 @@ class MicropostsController < ApplicationController
   end
   
   def update
-    @micropost = Micropost.find(params[:id])
-    if @micropost.update_attributes(micropost_params)
+    begin
+      @micropost = Micropost.find(params[:id])
+      @micropost.transaction do
+        @micropost.update_attributes!(micropost_params)
+      end
       flash[:success] = "ライブを更新しました！"
       redirect_to @micropost
-    else
+    rescue
       render 'edit'
     end
   end
 
   def destroy
-    @micropost.destroy
-    flash[:success] = "ライブを削除しました"
-    redirect_to request.referrer || root_url
+    begin
+      @micropost.transaction do
+        @micropost.destroy!
+      end
+      flash[:success] = "ライブを削除しました"
+      redirect_to request.referrer || root_url
+    rescue
+      flash[:danger] = "削除に失敗しました"
+      redirect_to request.referrer || root_url
+    end
   end
 
   private

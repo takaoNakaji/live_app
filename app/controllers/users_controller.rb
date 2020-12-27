@@ -16,12 +16,15 @@ class UsersController < ApplicationController
   end
   
   def create
-     @user = User.new(user_params)
-    if @user.save
+    begin
+      @user = User.new(user_params)
+      @user.transaction do
+        @user.save!
+      end
       log_in @user
       flash[:success] = "ようこそ Stcheck へ！"
       redirect_to @user
-    else
+    rescue
       render 'new'
     end
   end
@@ -31,19 +34,29 @@ class UsersController < ApplicationController
   end
   
   def update
-    @user = User.find(params[:id])
-    if @user.update_attributes(user_params)
+    begin
+      @user = User.find(params[:id])
+      @user.transaction do
+        @user.update_attributes!(user_params)
+      end
       flash[:success] = "ユーザー情報を更新しました！"
       redirect_to @user
-    else
+    rescue
       render 'edit'
     end
   end
   
   def destroy
-    User.find(params[:id]).destroy
-    flash[:success] = "退会しました"
-    redirect_to users_url
+    begin
+      User.transaction do
+        User.find(params[:id]).destroy!
+      end
+      flash[:success] = "退会しました"
+      redirect_to users_url
+    rescue
+      flash[:danger] = "退会に失敗しました"
+      redirect_to @user
+    end  
   end
   
   private
