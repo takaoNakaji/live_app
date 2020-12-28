@@ -24,6 +24,7 @@
 * 投稿したURLをハイパーリンクにする機能
 * 単体テスト機能
 * 結合テスト機能
+* 静的コード解析ツール：RuboCop
 * Paas：heroku <https://stcheck85.herokuapp.com/>
 * セッション管理はクッキー方式
 
