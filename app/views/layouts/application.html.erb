@@ -7,13 +7,14 @@
                                'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application',
                                'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= render 'layouts/shim' %>
   </head>
   <body>
     <%= render 'layouts/header' %>
     <% if !logged_in? %>
     <div class="jumbotron jumbotron-fluid center">
-      <h1>Stcheckへようこそ</h1>
+      <h1>Stcheck</h1>
       <h2>路上ミュージシャンのライブ情報共有サイト</h2>
       <%= link_to "今すぐ新規登録!", signup_path, class: "btn btn-lg btn-primary" %>
     </div>
@@ -23,8 +24,8 @@
         <div class="alert alert-<%= message_type %>"><%= message %></div>
       <% end %>
       <%= yield %>
-      <%= render 'layouts/footer' %>
     </div>
+    <%= render 'layouts/footer' %>
     <%= debug(params) if Rails.env.development? %>
   </body>
 </html>
