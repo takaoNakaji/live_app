@@ -1,6 +1,6 @@
 <br>
 <%= form_for(:session, url: login_path) do |f| %>
-    <p>↓↓↓↓テストユーザーとしてログインできます</p>
+    <p>↓テストユーザーとしてログインできます</p>
     <%= f.hidden_field :email, value: 'test@gmail.com' %>
     <%= f.hidden_field :password, value: '123456789' %>
     <%= f.submit 'テストログイン', class: "btn btn-primary" %>

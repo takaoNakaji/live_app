@@ -1,7 +1,10 @@
-<%= render 'static_pages/form' %>
-<% if logged_in? %>
-<%= button_to "ライブ作成", {controller: 'microposts', action: 'new'}, {method: :get, class: "sbtn1"} %>
-  <%= render 'static_pages/if' %>
-<% else %>
-  <%= render 'static_pages/else' %>
-<% end %>
+<div class="col-md-10 col-md-offset-1">
+  <%= render 'static_pages/form' %>
+  <% if logged_in? %>
+    <br>
+    <%= button_to "ライブ作成", {controller: 'microposts', action: 'new'}, {method: :get, class: "btn btn-primary"} %>
+  <% end %>
+  <div class="row">
+    <%= render 'shared/feed' %>
+  </div>
+</div>
