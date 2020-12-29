@@ -1,8 +1,8 @@
 <footer class="footer">
-  <small>
-    <p>©️ 2021 Stcheck All Rights Reserved.</p>
-  </small>
-  <p class="pagetop">
-    <%= link_to image_tag("pagetop.png", class: "sized", alt: "Pagetop"), '#' %>
-  </p>
+  <p>©️ 2021 Stcheck All Rights Reserved.</p>
+  <span id="back">
+    <a href="">
+      <%= image_tag asset_path('arrow.png'), data: {"turbolinks"=>false}, class: "arrow" %>
+    </a>
+  </span>
 </footer>
