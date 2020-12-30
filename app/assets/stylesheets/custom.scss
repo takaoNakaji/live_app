@@ -205,8 +205,20 @@ input {
     padding: 10px 0;
     border-top: 1px solid #e8e8e8;
   }
+  .title {
+    margin-top: 5em;
+    padding-top: 0;
+  }
+  .live_on {
+    display: block;
+    margin-left: 60px;
+  }
+  .fromto {
+    display: block;
+    margin-left: 60px;
+  }
   .area {
-    
+    display: block;
     margin-left: 60px;
   }
   .act {
@@ -224,8 +236,16 @@ input {
   .timestamp {
     color: $gray-light;
     display: block;
-    margin-left: 60px;
+    margin-left: 0px;
   }
+  
+  img {
+    float: left;
+    margin-right: 10px;
+    margin-top: 5px;
+    object-fit: contain;
+  }
+  
   .gravatar {
     float: left;
     margin-right: 10px;
