@@ -213,50 +213,39 @@ input {
     padding: 10px 0;
     border-top: 1px solid #e8e8e8;
   }
-  .title {
-    margin-top: 5em;
-    padding-top: 0;
-  }
-  .live_on {
-    display: block;
-    margin-left: 60px;
-  }
-  .fromto {
-    display: block;
-    margin-left: 60px;
-  }
-  .area {
-    display: block;
-    margin-left: 60px;
-  }
-  .act {
-    display: block;
-    margin-left: 60px;
-  }
-  .content {
-    display: block;
-    margin-left: 60px;
-    img {
-      display: block;
-      padding: 5px 0;
-    }
-  }
-  .timestamp {
-    color: $gray-light;
-    display: block;
-    margin-left: 0px;
-  }
-  
   img {
     float: left;
     margin-right: 10px;
-    margin-top: 5px;
+    margin-top: 30px;
     object-fit: contain;
   }
-  
-  .gravatar {
-    float: left;
-    margin-right: 10px;
-    margin-top: 5px;
+  p {
+    overflow: hidden;
+    .title {
+    margin-top: 5em;
+    padding-top: 0;
+    }
+    .live_on {
+      display: block;
+    }
+    .fromto {
+      display: block;
+    }
+    .area {
+      display: block;
+    }
+    .act {
+      display: block;
+    }
+    .gravatar {
+      float: left;
+      margin-right: 10px;
+      margin-top: 5px;
+    }
+    .timestamp {
+      color: $gray-light;
+      display: block;
+      margin-left: 0px;
+    }
   }
 }
